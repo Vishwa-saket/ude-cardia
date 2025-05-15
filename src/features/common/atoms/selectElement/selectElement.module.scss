@@ -1,0 +1,17 @@
+.selectElement > div {
+  margin-top: 2px !important;
+  margin-bottom: 1px !important;
+}
+
+.selectElement > div > label {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  padding-bottom: 1px !important;
+  margin-bottom: -2px !important;
+}
+
+.selectElement > div > div > div:nth-child(1) {
+  height: 25px !important;
+  min-height: 25px !important;
+  padding-top: 3px !important;
+}

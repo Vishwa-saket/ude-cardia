@@ -1,0 +1,17 @@
+.timePickerElement > div {
+  margin-top: 2px !important;
+  margin-bottom: 1px !important;
+  label {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    padding-bottom: 1px !important;
+    margin-bottom: -2px !important;
+  }
+  button {
+    height: 0.6rem;
+  }
+}
+.timePickerElement > div > div > input {
+  min-height: 25px !important;
+  height: 25px !important;
+}
