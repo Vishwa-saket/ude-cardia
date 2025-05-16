@@ -16,6 +16,7 @@ import Grid from "apollo-react/components/Grid";
 import Typography from "apollo-react/components/Typography";
 import style from "./features/landingPage/Component/LeftComponent/sidebarStyle.module.scss";
 import "./app.scss";
+import Footer from "./features/footer/index";
 const session = new Session();
 const { ROUTES } = CONSTANTS;
 
@@ -291,6 +292,7 @@ function CoreApp({ userId, deliveryId }: any) {
                 />
               </Routes>
             </Suspense>
+            <Footer />
           </Grid>
         </Grid>
       </React.Fragment>
