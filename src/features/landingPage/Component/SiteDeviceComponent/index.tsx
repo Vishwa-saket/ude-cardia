@@ -15,7 +15,6 @@ import DatePickerElement from "../../../common/atoms/datePickerElement/index";
 import TimePickerElement from "../../../common/atoms/timePickerElement/index";
 
 import SelectElement from "../../../common/atoms/selectElement/index";
-import Footer from "../../../footer/index";
 // import {
 //   compareStrings,
 //   compareNumbers,
@@ -145,13 +144,10 @@ const SiteDeviceComponent: FC = () => {
         }}
         interactive={false}
       >
-        <div className={style.borderSolid}>
         <Typography className={style.myLinks}>My Links</Typography>
         <Typography style={{ marginBottom: "0.5rem" }} emphasis="high">
           Site Device ECG Upload
         </Typography>
-
-        <div className={style.borderSolidIn}>
         <Grid
           container
           spacing={2}
@@ -238,7 +234,7 @@ const SiteDeviceComponent: FC = () => {
               padding: "0.75rem",
             }}
           >
-            <Typography sx={{ visibility: "hidden" }} >
+            <Typography sx={{ visibility: "hidden" }}>
               Subject Details
             </Typography>
             <TextfieldElement
@@ -284,9 +280,6 @@ const SiteDeviceComponent: FC = () => {
             </Typography>
           </div>
         </Grid>
-        </div>
-
-        <div className={style.borderSolidIn}>
         <div
           style={{
             display: "flex",
@@ -310,8 +303,6 @@ const SiteDeviceComponent: FC = () => {
             <Button variant="tertiary">Upload</Button>
           </div>
         </div>
-        </div>
-        <div className={style.borderSolidIn}>
         <div style={{ backgroundColor: "#f8f9fb" }}>
           <Table
             columns={uploadedColumns}
@@ -321,16 +312,12 @@ const SiteDeviceComponent: FC = () => {
             emptyProps={{
               text: <>No records find to display.</>,
             }}
-            
           />
         </div>
         <div style={{ marginLeft: "0.5rem", marginTop: "0.5rem" }}>
           <Button variant="tertiary">Export list to CSV File</Button>
         </div>
-        </div>
-        </div>
       </Card>
-      {/* <Footer /> */}
     </>
   );
 };

@@ -16,7 +16,6 @@ import Grid from "apollo-react/components/Grid";
 import Typography from "apollo-react/components/Typography";
 import style from "./features/landingPage/Component/LeftComponent/sidebarStyle.module.scss";
 import "./app.scss";
-import Footer from "./features/footer/index";
 const session = new Session();
 const { ROUTES } = CONSTANTS;
 
@@ -90,7 +89,7 @@ function CoreApp({ userId, deliveryId }: any) {
       path: ROUTES.MENU_LINK.DOCUMENT_REPOSITORY,
       navText: "Document Repository",
       child: (
-        <Typography variant="body2" darkMode>
+        <Typography sx={{ marginBottom: ".2rem" }} variant="body2" darkMode>
           Document Repository
         </Typography>
       ),
@@ -99,7 +98,7 @@ function CoreApp({ userId, deliveryId }: any) {
       path: ROUTES.MENU_LINK.SITE_DEVICE_ECG_UPLOAD,
       navText: "Site Device ECG Upload",
       child: (
-        <Typography variant="body2" darkMode>
+        <Typography variant="body2" darkMode sx={{ marginBottom: ".2rem" }}>
           Site Device ECG Upload
         </Typography>
       ),
@@ -108,7 +107,7 @@ function CoreApp({ userId, deliveryId }: any) {
       path: ROUTES.MENU_LINK.MANAGE_DOCUMENT_REPOSITORY,
       navText: "Manage Document Repository",
       child: (
-        <Typography variant="body2" darkMode>
+        <Typography variant="body2" darkMode sx={{ marginBottom: ".2rem" }}>
           Manage Document Repository
         </Typography>
       ),
@@ -117,7 +116,7 @@ function CoreApp({ userId, deliveryId }: any) {
       path: ROUTES.MENU_LINK.SUPPLIES_REQUEST_ON_THE_WEB,
       navText: "Supplies Request on the Web",
       child: (
-        <Typography variant="body2" darkMode>
+        <Typography variant="body2" darkMode sx={{ marginBottom: ".2rem" }}>
           Supplies Request on the Web
         </Typography>
       ),
@@ -126,7 +125,7 @@ function CoreApp({ userId, deliveryId }: any) {
       path: ROUTES.MENU_LINK.MESSAGE_BOARD,
       navText: "Message Board",
       child: (
-        <Typography variant="body2" darkMode>
+        <Typography variant="body2" darkMode sx={{ marginBottom: ".2rem" }}>
           Message Board
         </Typography>
       ),
@@ -135,7 +134,7 @@ function CoreApp({ userId, deliveryId }: any) {
       path: ROUTES.MENU_LINK.COMPANY_INFORMATION_AND_CONTACT_LINKS,
       navText: "Company Information and Contact Links",
       child: (
-        <Typography variant="body2" darkMode>
+        <Typography variant="body2" darkMode sx={{ marginBottom: ".2rem" }}>
           Company Information and Contact Links
         </Typography>
       ),
@@ -144,7 +143,7 @@ function CoreApp({ userId, deliveryId }: any) {
       path: ROUTES.MENU_LINK.TRAINING_REVIEW,
       navText: "Training Review",
       child: (
-        <Typography variant="body2" darkMode>
+        <Typography variant="body2" darkMode sx={{ marginBottom: ".2rem" }}>
           Training Review
         </Typography>
       ),
@@ -153,7 +152,7 @@ function CoreApp({ userId, deliveryId }: any) {
       path: ROUTES.MENU_LINK.TRAINING_ACKNOWLEDGEMENT,
       navText: "Training Acknowledgement",
       child: (
-        <Typography variant="body2" darkMode>
+        <Typography variant="body2" darkMode sx={{ marginBottom: ".2rem" }}>
           Training Acknowledgement
         </Typography>
       ),
@@ -226,8 +225,8 @@ function CoreApp({ userId, deliveryId }: any) {
     <>
       <React.Fragment>
         <Header userName={userName} />
-        
-        <Grid container spacing={2}>
+
+        <Grid container spacing={1}>
           <Grid item xs={isBladeOpened ? 3 : 0.5}>
             <LeftComponent
               handleBladeOpen={handleBladeOpened}
@@ -237,14 +236,15 @@ function CoreApp({ userId, deliveryId }: any) {
               reportsNavItems={ReportNavItems}
               isDisplay={isMenuOpen}
             />
-            
           </Grid>
 
-          <Grid item xs={isBladeOpened ? 9 : 11} className="rightGrid">
+          <Grid item xs={isBladeOpened ? 9 : 11.5} className="rightGrid">
             <Suspense fallback={<Loader overlayClassName="fallback-loader" />}>
               <Routes>
-                <Route path="/" element={<DashboardComponent />} />
-                <Route path="/home" element={<DashboardComponent />} />
+                <Route
+                  path={ROUTES.MENU_LINK.MY_DASHBOARD}
+                  element={<DashboardComponent />}
+                />
                 <Route
                   path={ROUTES.MENU_LINK.SITE_DEVICE_ECG_UPLOAD}
                   element={<SiteDeviceComponent />}
@@ -290,10 +290,8 @@ function CoreApp({ userId, deliveryId }: any) {
                   element={<SuppliesRequest />}
                 />
               </Routes>
-              <Footer />
             </Suspense>
           </Grid>
-          
         </Grid>
       </React.Fragment>
     </>

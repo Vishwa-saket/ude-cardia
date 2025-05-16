@@ -16,7 +16,6 @@ import CONSTANTS from "../../../../constants/appRoutes";
 import { useDispatch } from "react-redux";
 import { isFluxStandardAction } from "@reduxjs/toolkit";
 
-
 interface LeftComponentProps {
   menuNavItems: MenuNavItem[];
   searchNavItems: SearchNavItem[];
@@ -80,7 +79,11 @@ const LeftComponent: FC<LeftComponentProps> = ({
         >
           <div>
             <div className={style.myLinks}>
-              <Typography variant="bodyDefault" darkMode>
+              <Typography
+                variant="bodyDefault"
+                darkMode
+                className={style.marginpt5rem}
+              >
                 My Links
               </Typography>
               <div style={{ marginLeft: "1rem" }}>
@@ -100,7 +103,11 @@ const LeftComponent: FC<LeftComponentProps> = ({
               </div>
             </div>
             <div className={style.search}>
-              <Typography variant="bodyDefault" darkMode>
+              <Typography
+                variant="bodyDefault"
+                darkMode
+                className={style.marginpt5rem}
+              >
                 Search
               </Typography>
               <Select
@@ -220,7 +227,6 @@ const LeftComponent: FC<LeftComponentProps> = ({
           </div>
         </Blade>
       </div>
-     
     </>
   );
 };
