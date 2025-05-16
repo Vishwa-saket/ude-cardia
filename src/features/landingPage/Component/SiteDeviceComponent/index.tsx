@@ -140,7 +140,7 @@ const SiteDeviceComponent: FC = () => {
       <Card
         style={{
           padding: "0.75rem",
-          marginTop: "4.2rem",
+          marginTop: "5.2rem",
         }}
         interactive={false}
       >
@@ -148,6 +148,7 @@ const SiteDeviceComponent: FC = () => {
         <Typography style={{ marginBottom: "0.5rem" }} emphasis="high">
           Site Device ECG Upload
         </Typography>
+        <div className={style.borderSolidIn}>
         <Grid
           container
           spacing={2}
@@ -155,11 +156,13 @@ const SiteDeviceComponent: FC = () => {
             padding: "1.35rem",
           }}
         >
+          
           <Grid
             item
             xs={3}
             style={{ backgroundColor: "#f8f9fb", padding: "0.75rem" }}
           >
+      
             <Typography>Protocol Details</Typography>
             <SelectElement
               label="Protocol Number:"
@@ -280,6 +283,8 @@ const SiteDeviceComponent: FC = () => {
             </Typography>
           </div>
         </Grid>
+        </div>
+        <div className={style.borderSolidIn}>
         <div
           style={{
             display: "flex",
@@ -303,6 +308,8 @@ const SiteDeviceComponent: FC = () => {
             <Button variant="tertiary">Upload</Button>
           </div>
         </div>
+        </div>
+        <div className={style.borderSolidIn}>
         <div style={{ backgroundColor: "#f8f9fb" }}>
           <Table
             columns={uploadedColumns}
@@ -316,6 +323,7 @@ const SiteDeviceComponent: FC = () => {
         </div>
         <div style={{ marginLeft: "0.5rem", marginTop: "0.5rem" }}>
           <Button variant="tertiary">Export list to CSV File</Button>
+        </div>
         </div>
       </Card>
     </>
